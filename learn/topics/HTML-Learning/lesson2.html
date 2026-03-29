@@ -1,32 +1,278 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 2</title>
+    <title>Lesson 2 - Advanced HTML</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial;
-            background: #1e293b;
-            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        header {
             text-align: center;
+            padding: 40px 20px;
         }
-        code {
-            background: black;
-            padding: 5px;
+
+        header h1 {
+            font-size: 42px;
+            color: #60a5fa;
         }
-        img { width: 250px; }
+
+        header p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #111827;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .code {
+            background: #020617;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        .exercise {
+            border-left: 4px solid #22c55e;
+        }
+
+        .challenge {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .nav {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            background: #2563eb;
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
+
 <body>
 
-<h1>Lesson 2: HTML Tags</h1>
-<img src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+<header>
+    <h1>Advanced HTML</h1>
+    <p>Structure Like a Real Developer</p>
+</header>
 
-<p>Example of a paragraph tag:</p>
-<code>&lt;p&gt;Hello World&lt;/p&gt;</code>
+<div class="container">
 
-<p>Tags are used to structure content.</p>
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
 
-<a href="lesson3.html">Next →</a>
+<div class="card">
+<h2>🧠 What You’re Fixing Today</h2>
+<p>
+Most beginners write messy HTML. It works — but it's wrong.
+Today you learn how professionals structure pages.
+</p>
+</div>
+
+<div class="card">
+<h2>🏗️ Semantic HTML (CRITICAL)</h2>
+
+<p>
+Instead of using random &lt;div&gt; everywhere, use meaningful tags:
+</p>
+
+<div class="code">
+&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;
+&lt;main&gt;&lt;/main&gt;
+&lt;section&gt;&lt;/section&gt;
+&lt;article&gt;&lt;/article&gt;
+&lt;footer&gt;&lt;/footer&gt;
+</div>
+
+<p>
+These tags:
+</p>
+
+<ul>
+<li>Improve readability</li>
+<li>Help SEO</li>
+<li>Help accessibility</li>
+</ul>
+
+<p>
+Bad developers use only &lt;div&gt;. Good ones use structure.
+</p>
+</div>
+
+<div class="card">
+<h2>📄 Real Page Structure</h2>
+
+<div class="code">
+&lt;body&gt;
+
+&lt;header&gt;Logo + Title&lt;/header&gt;
+
+&lt;nav&gt;Links&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;section&gt;Content&lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;Copyright&lt;/footer&gt;
+
+&lt;/body&gt;
+</div>
+
+<p>
+This is how real websites are built.
+</p>
+</div>
+
+<div class="card">
+<h2>📝 Forms (REAL WORLD SKILL)</h2>
+
+<p>Forms are how users interact with your site.</p>
+
+<div class="code">
+&lt;form&gt;
+    &lt;input type="text" placeholder="Name"&gt;
+    &lt;input type="email" placeholder="Email"&gt;
+    &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</div>
+
+<ul>
+<li>input = user data</li>
+<li>type defines behavior</li>
+<li>button submits</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>⚙️ Important Input Types</h2>
+
+<ul>
+<li>text</li>
+<li>email</li>
+<li>password</li>
+<li>number</li>
+<li>date</li>
+</ul>
+
+<p>
+Choosing the right type improves UX automatically.
+</p>
+</div>
+
+<div class="card">
+<h2>🔗 Links & Navigation</h2>
+
+<div class="code">
+&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;
+</div>
+
+<p>
+Links connect the web. Navigation = user experience.
+</p>
+</div>
+
+<div class="card exercise">
+<h2>🧪 Exercise (20 mins)</h2>
+
+<p>Build a structured page using:</p>
+
+<ul>
+<li>header</li>
+<li>nav</li>
+<li>main</li>
+<li>footer</li>
+</ul>
+
+<p>
+Do NOT use only divs.
+</p>
+</div>
+
+<div class="card challenge">
+<h2>🔥 Challenge (40 mins)</h2>
+
+<p>Create a Contact Page:</p>
+
+<ul>
+<li>Name input</li>
+<li>Email input</li>
+<li>Message box</li>
+<li>Submit button</li>
+</ul>
+
+<p>
+Make it structured + clean.
+</p>
+</div>
+
+<div class="card">
+<h2>🧠 Key Takeaways</h2>
+
+<ul>
+<li>Semantic HTML matters</li>
+<li>Structure > appearance</li>
+<li>Forms = real interaction</li>
+</ul>
+</div>
+
+<div class="nav">
+<a class="btn" href="lesson3.html">Next Lesson →</a>
+</div>
+
+</div>
 
 </body>
 </html>
