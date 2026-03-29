@@ -1,34 +1,260 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 1</title>
+    <title>Lesson 1 - HTML Foundations</title>
+
     <style>
-        body {
-            font-family: Arial;
-            background: #111827;
-            color: white;
-            text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        img { width: 250px; }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px;
-            background: #22c55e;
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #60a5fa;
+        }
+
+        header p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #111827;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .code {
+            background: #020617;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .exercise {
+            border-left: 4px solid #22c55e;
+        }
+
+        .challenge {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .nav {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            background: #2563eb;
+            padding: 12px 25px;
+            border-radius: 8px;
             color: white;
             text-decoration: none;
+            display: inline-block;
         }
+
     </style>
 </head>
+
 <body>
 
-<h1>Lesson 1: What is HTML?</h1>
-<img src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+<header>
+    <h1>HTML Foundations</h1>
+    <p>From Zero → Real Understanding</p>
+</header>
 
-<p>HTML stands for HyperText Markup Language.</p>
-<p>It is used to create web pages.</p>
+<div class="container">
 
-<a href="lesson2.html">Next →</a>
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+
+<div class="card">
+<h2>🚀 What You’re Actually Learning</h2>
+<p>
+Most beginners think HTML is just "tags". That’s wrong.
+You are learning how the internet is structured.
+</p>
+
+<ul>
+<li>How browsers think</li>
+<li>How websites are built internally</li>
+<li>How to structure real pages</li>
+<li>How to avoid beginner mistakes</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧠 What HTML REALLY Is</h2>
+<p>
+HTML is not programming. It doesn’t run logic.
+It defines structure.
+</p>
+
+<p>
+Think like this:
+</p>
+
+<ul>
+<li>HTML = Skeleton</li>
+<li>CSS = Skin + Design</li>
+<li>JS = Brain</li>
+</ul>
+
+<p>
+Bad HTML = broken website no matter how good your CSS is.
+</p>
+</div>
+
+<div class="card">
+<h2>🌍 How a Website Loads</h2>
+
+<ul>
+<li>Browser receives HTML file</li>
+<li>Builds DOM (structure tree)</li>
+<li>Applies styles</li>
+<li>Executes JavaScript</li>
+</ul>
+
+<p>
+You are writing instructions — not visuals.
+</p>
+</div>
+
+<div class="card">
+<h2>🏗️ Core Structure (MEMORIZE THIS)</h2>
+
+<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</div>
+
+<p>
+Every single website starts like this.
+</p>
+</div>
+
+<div class="card">
+<h2>🔍 Tags Deep Dive</h2>
+
+<p>Tags define meaning, not just visuals.</p>
+
+<div class="code">
+&lt;p&gt;Paragraph&lt;/p&gt;
+&lt;h1&gt;Heading&lt;/h1&gt;
+&lt;img src="image.jpg"&gt;
+</div>
+
+<ul>
+<li>Opening + Closing tags</li>
+<li>Attributes add data (src, href)</li>
+<li>Some tags don’t close</li>
+</ul>
+</div>
+
+<div class="card exercise">
+<h2>🧪 Exercise (15–20 mins)</h2>
+
+<p>Build a page with:</p>
+
+<ul>
+<li>1 heading</li>
+<li>2 paragraphs</li>
+<li>1 image</li>
+</ul>
+
+<p>
+Do NOT copy. If you struggle, that’s the point.
+</p>
+</div>
+
+<div class="card challenge">
+<h2>🔥 Challenge (30 mins)</h2>
+
+<p>Create a real profile page:</p>
+
+<ul>
+<li>Name</li>
+<li>Bio</li>
+<li>Skills list</li>
+<li>Image</li>
+</ul>
+
+<p>
+Make it clean. Think like a developer.
+</p>
+</div>
+
+<div class="card">
+<h2>🧠 Key Takeaways</h2>
+
+<ul>
+<li>HTML = structure, not design</li>
+<li>Browsers interpret your code</li>
+<li>Good structure = scalable websites</li>
+</ul>
+</div>
+
+<div class="nav">
+<a class="btn" href="lesson2.html">Next Lesson →</a>
+</div>
+
+</div>
 
 </body>
 </html>
