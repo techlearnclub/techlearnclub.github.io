@@ -1,1 +1,125 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #111;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px 0;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar ul.nav-links li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.navbar ul.nav-links li a:hover,
+.navbar ul.nav-links li a.active {
+  color: #0071e3;
+}
+
+/* Hero Section */
+.hero {
+  margin: 80px auto 50px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+/* Courses Section */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.course-card {
+  background-color: #f9f9f9;
+  width: 280px;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.course-card h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.course-card p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #0071e3;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  background-color: #f5f5f7;
+  font-weight: 500;
+}
