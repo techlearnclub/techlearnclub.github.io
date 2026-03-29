@@ -1,89 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechLearnClub Events</title>
-  <link rel="stylesheet" href="https://techlearnclub.github.io/style.css">
-  <style>
-    body { background: #12121f; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    .navbar { display: flex; padding: 15px 30px; background: #1e1e2f; align-items: center; }
-    .navbar .logo { color: #00e0ff; font-weight: bold; font-size: 1.5rem; text-decoration: none; }
-    .nav-links { list-style: none; display: flex; margin-left: auto; gap: 20px; }
-    .nav-links li a { color: #fff; text-decoration: none; }
-    .event-container { max-width: 900px; margin: 60px auto; padding: 20px; background: #1e1e2f; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
-    .event-header { text-align: center; margin-bottom: 40px; }
-    .event-header h1 { font-size: 3rem; color: #00e0ff; }
-    .event-header p { font-size: 1.2rem; color: #ccc; }
-    .event-details h2 { color: #00e0ff; margin-bottom: 10px; }
-    .event-details ul { list-style-type: disc; padding-left: 20px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechLearnClub Events</title>
+<link rel="stylesheet" href="https://techlearnclub.github.io/style.css">
+<style>
+  body {
+    background: #12121f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    display: flex;
+    padding: 15px 30px;
+    background: #1e1e2f;
+    align-items: center;
+  }
+  .navbar .logo { color: #00e0ff; font-weight: bold; font-size: 1.5rem; text-decoration: none; }
+  .nav-links { list-style: none; display: flex; margin-left: auto; gap: 20px; }
+  .nav-links li a { color: #fff; text-decoration: none; }
+  .nav-links li a.active { color: #00e0ff; }
+  .container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  .event-card {
+    background: #1e1e2f;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+  }
+  .event-card:hover { transform: translateY(-5px); }
+  .event-card h2 { color: #00e0ff; margin-bottom: 10px; }
+  .event-card p { color: #ccc; line-height: 1.7; }
+  .event-card ul { list-style-type: disc; padding-left: 20px; }
+  .event-list a {
+    display: block;
+    background: #1e1e2f;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #00e0ff;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+  .event-list a:hover { transform: translateY(-3px); }
+</style>
 </head>
 <body>
 
-  <header>
-    <nav class="navbar">
-      <a href="https://xxxxx.github.io/" class="logo">TechLearnClub</a>
-      <ul class="nav-links">
-        <li><a href="https://xxxxx.github.io/">Home</a></li>
-        <li><a href="https://xxxxx.github.io/tutorials.html">Tutorials</a></li>
-        <li><a href="https://xxxxx.github.io/events/index.html" class="active">Events</a></li>
-        <li><a href="https://xxxxx.github.io/contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav class="navbar">
+    <a href="https://techlearnclub.github.io/" class="logo">TechLearnClub</a>
+    <ul class="nav-links">
+      <li><a href="https://techlearnclub.github.io/">Home</a></li>
+      <li><a href="https://techlearnclub.github.io/learn/topics">Learn</a></li>
+      <li><a href="events/index.html" class="active">Events</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="event-container" id="event-container">
-    <!-- Event details will be injected here by JavaScript -->
-  </section>
+<div class="container" id="container">
+  <!-- Event list or details will be injected here -->
+</div>
 
-  <script>
-    // Event data
-    const events = {
-      "8309483": {
-        title: "CODE-A-THON",
-        description: "CODE-A-THON is an intensive coding challenge designed for learners of all levels. Participants will work on real-world coding problems, collaborate with peers, and showcase their creativity through innovative solutions. Win exciting prizes, gain recognition, and enhance your coding skills!",
-        duration: "29 March 2026 to 29 May 2026",
-        highlights: [
-          "Weekly coding challenges and mini-projects",
-          "Mentor guidance & live Q&A sessions",
-          "Certificate of participation for all",
-          "Top performers win exciting prizes"
-        ]
-      }
-      // You can add more events here, e.g., "8309484": {...}
-    };
-
-    // Get query parameter from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const eventId = urlParams.get('id');
-    const container = document.getElementById('event-container');
-
-    if(eventId && events[eventId]) {
-      const event = events[eventId];
-      container.innerHTML = `
-        <div class="event-header">
-          <h1>${event.title}</h1>
-          <p>Challenge your coding skills and innovate!</p>
-        </div>
-        <div class="event-details">
-          <h2>📅 Event Duration</h2>
-          <p>${event.duration}</p>
-          <h2>📝 Event Description</h2>
-          <p>${event.description}</p>
-          <h2>🏆 Highlights</h2>
-          <ul>${event.highlights.map(item => `<li>${item}</li>`).join('')}</ul>
-        </div>
-      `;
-    } else {
-      container.innerHTML = `
-        <div class="event-header">
-          <h1>Event Not Found</h1>
-          <p>Please check the event link.</p>
-        </div>
-      `;
+<script>
+  const events = {
+    "8309483": {
+      title: "CODE-A-THON",
+      description: "CODE-A-THON is an intensive coding challenge designed for learners of all levels. Participants will work on real-world coding problems, collaborate with peers, and showcase their creativity through innovative solutions. Win exciting prizes, gain recognition, and enhance your coding skills!",
+      duration: "29 March 2026 to 29 May 2026",
+      highlights: [
+        "Weekly coding challenges and mini-projects",
+        "Mentor guidance & live Q&A sessions",
+        "Certificate of participation for all",
+        "Top performers win exciting prizes"
+      ]
+    },
+    // Add more events here
+    "1234567": {
+      title: "AI Workshop",
+      description: "Learn AI fundamentals and build your first AI model.",
+      duration: "1 April 2026",
+      highlights: [
+        "Hands-on AI tutorials",
+        "Beginner-friendly",
+        "Live Q&A"
+      ]
     }
-  </script>
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const eventId = urlParams.get('id');
+  const container = document.getElementById('container');
+
+  if(eventId && events[eventId]) {
+    // Show event details
+    const event = events[eventId];
+    container.innerHTML = `
+      <div class="event-card">
+        <h2>${event.title}</h2>
+        <p><strong>📅 Duration:</strong> ${event.duration}</p>
+        <p>${event.description}</p>
+        <h3>🏆 Highlights</h3>
+        <ul>${event.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+      </div>
+    `;
+  } else {
+    // Show list of all events
+    let listHTML = '<h1 style="text-align:center; color:#00e0ff; margin-bottom:30px;">Upcoming Events</h1><div class="event-list">';
+    for(const id in events) {
+      listHTML += `<a href="?id=${id}">${events[id].title}</a>`;
+    }
+    listHTML += '</div>';
+    container.innerHTML = listHTML;
+  }
+</script>
 
 </body>
 </html>
