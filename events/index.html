@@ -5,21 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TechLearnClub Events</title>
 <style>
-/* Reset & global styles */
+/* Global reset */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Roboto', sans-serif; color:#111; background:#fff; line-height:1.6; }
+body { font-family:'Roboto',sans-serif; background:#fefefe; color:#111; line-height:1.6; }
 .container { max-width:900px; margin:120px auto 60px; padding:0 20px; }
 
 /* Navbar */
-.navbar { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:fixed; width:100%; top:0; background:rgba(255,255,255,0.95); box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:1000; }
+.navbar {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 50px; position:fixed; width:100%; top:0;
+  background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:1000;
+}
 .navbar .logo { font-weight:700; font-size:1.5rem; color:#111; text-decoration:none; }
 .navbar ul { display:flex; list-style:none; gap:25px; }
 .navbar a { text-decoration:none; color:#111; font-weight:500; transition:color 0.3s; }
 .navbar a.active { color:#0071e3; }
 .navbar a:hover { color:#0071e3; }
 
-/* Event list links */
-.event-list a { display:block; background:#fff; padding:20px; margin-bottom:15px; border-radius:12px; text-decoration:none; color:#0071e3; font-weight:600; box-shadow:0 5px 20px rgba(0,0,0,0.05); transition:transform 0.2s, box-shadow 0.2s; }
+/* Event list */
+.event-list a {
+  display:block; background:#fff; padding:20px; margin-bottom:15px;
+  border-radius:12px; text-decoration:none; color:#0071e3; font-weight:600;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05); transition:transform 0.2s, box-shadow 0.2s;
+}
 .event-list a:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
 
 /* Event card */
@@ -45,58 +53,66 @@ body { font-family:'Roboto', sans-serif; color:#111; background:#fff; line-heigh
 </header>
 
 <div class="container" id="container">
-  <!-- Event content injected here -->
+  <!-- Event content will appear here -->
 </div>
 
 <script>
-// Define events
-const events = {
-  "8309483": {
-    title: "CODE-A-THON",
-    description: "CODE-A-THON is an intensive coding challenge for learners of all levels. Solve real-world coding problems, collaborate, and showcase your creativity.",
-    duration: "10 May 2026 to 10 June 2026",
-    highlights: [
-      "Weekly coding challenges",
-      "Mentor guidance & Q&A",
-      "Certificates for all",
-      "Top performers win prizes"
-    ]
-  },
-  
-// Get event ID from URL
-function getEventId() {
-  // Works even when opened locally
-  const query = window.location.search;
-  if(!query) return null;
-  const params = new URLSearchParams(query);
-  return params.get('id');
-}
+// Wait until DOM is ready
+document.addEventListener("DOMContentLoaded", function() {
 
-const container = document.getElementById('container');
-const id = getEventId();
+  // Define events
+  const events = {
+    "8309483": {
+      title: "CODE-A-THON",
+      description: "CODE-A-THON is an intensive coding challenge for learners of all levels. Solve real-world coding problems, collaborate, and showcase your creativity.",
+      duration: "29 March 2026 to 29 May 2026",
+      highlights: [
+        "Weekly coding challenges",
+        "Mentor guidance & Q&A",
+        "Certificates for all",
+        "Top performers win prizes"
+      ]
+    },
 
-if(id && events[id]) {
-  // Show single event
-  const e = events[id];
-  container.innerHTML = `
-    <div class="event-card">
-      <h2>${e.title}</h2>
-      <p><strong>📅 Duration:</strong> ${e.duration}</p>
-      <p>${e.description}</p>
-      <h3>🏆 Highlights</h3>
-      <ul>${e.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
-      <a href="index.html" class="back-btn">← Back to Events</a>
-    </div>
-  `;
-} else {
-  // Show all events
-  let listHTML = '<h1 style="text-align:center; color:#0071e3; margin-bottom:30px;">Upcoming Events</h1><div class="event-list">';
-  for(const key in events) {
-    listHTML += `<a href="?id=${key}">${events[key].title}</a>`;
+
+  const container = document.getElementById("container");
+
+  // Function to get query param
+  function getEventId() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id");
+    } catch(e) {
+      return null;
+    }
   }
-  listHTML += '</div>';
-  container.innerHTML = listHTML;
-}
+
+  const id = getEventId();
+
+  if(id && events[id]) {
+    // Show single event
+    const e = events[id];
+    container.innerHTML = `
+      <div class="event-card">
+        <h2>${e.title}</h2>
+        <p><strong>📅 Duration:</strong> ${e.duration}</p>
+        <p>${e.description}</p>
+        <h3>🏆 Highlights</h3>
+        <ul>${e.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+        <a href="index.html" class="back-btn">← Back to Events</a>
+      </div>
+    `;
+  } else {
+    // Show all events
+    let listHTML = '<h1 style="text-align:center; color:#0071e3; margin-bottom:30px;">Upcoming Events</h1><div class="event-list">';
+    for(const key in events) {
+      listHTML += `<a href="?id=${key}">${events[key].title}</a>`;
+    }
+    listHTML += '</div>';
+    container.innerHTML = listHTML;
+  }
+
+});
 </script>
 
 </body>
