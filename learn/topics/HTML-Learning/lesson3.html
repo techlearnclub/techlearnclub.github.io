@@ -1,32 +1,302 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 3</title>
+    <title>Lesson 3 - CSS Fundamentals</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #60a5fa;
+        }
+
+        header p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #111827;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .code {
             background: #020617;
-            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        .demo-box {
+            margin-top: 15px;
+            padding: 20px;
+            background: #2563eb;
+            border-radius: 8px;
             text-align: center;
         }
-        .box {
-            background: blue;
-            padding: 20px;
-            margin: 20px;
+
+        .exercise {
+            border-left: 4px solid #22c55e;
         }
-        img { width: 250px; }
+
+        .challenge {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .nav {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            background: #2563eb;
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
+
 <body>
 
-<h1>Lesson 3: CSS Basics</h1>
-<img src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+<header>
+    <h1>CSS Fundamentals</h1>
+    <p>Make Your Websites Actually Look Good</p>
+</header>
 
-<div class="box">This is styled with CSS!</div>
+<div class="container">
 
-<p>CSS is used to style HTML elements.</p>
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
 
-<a href="lesson4.html">Next →</a>
+<div class="card">
+<h2>🧠 What CSS REALLY Does</h2>
+
+<p>
+HTML gives structure. CSS controls appearance.
+But more importantly — CSS controls perception.
+</p>
+
+<ul>
+<li>Spacing = readability</li>
+<li>Color = emotion</li>
+<li>Layout = usability</li>
+</ul>
+
+<p>
+Bad CSS = ugly and unusable websites.
+</p>
+</div>
+
+<div class="card">
+<h2>🎯 How CSS Works</h2>
+
+<div class="code">
+selector {
+    property: value;
+}
+</div>
+
+<p>Example:</p>
+
+<div class="code">
+h1 {
+    color: blue;
+}
+</div>
+
+<p>
+This selects ALL h1 elements and styles them.
+</p>
+</div>
+
+<div class="card">
+<h2>🎯 Selectors (IMPORTANT)</h2>
+
+<div class="code">
+h1 { }
+.className { }
+#idName { }
+</div>
+
+<ul>
+<li>Element = targets all elements</li>
+<li>Class = reusable</li>
+<li>ID = unique</li>
+</ul>
+
+<p>
+Professionals mostly use classes.
+</p>
+</div>
+
+<div class="card">
+<h2>📦 The Box Model (CRITICAL)</h2>
+
+<p>
+Every element is a box:
+</p>
+
+<ul>
+<li>Content</li>
+<li>Padding (inside space)</li>
+<li>Border</li>
+<li>Margin (outside space)</li>
+</ul>
+
+<div class="demo-box">
+This box has padding and margin
+</div>
+
+<p>
+If you don’t understand this, layouts will break.
+</p>
+</div>
+
+<div class="card">
+<h2>🎨 Colors & Backgrounds</h2>
+
+<div class="code">
+body {
+    background: #0b0f19;
+    color: white;
+}
+</div>
+
+<p>
+Use contrast. Dark background + light text = readable.
+</p>
+</div>
+
+<div class="card">
+<h2>🔠 Typography</h2>
+
+<div class="code">
+body {
+    font-family: Arial;
+    line-height: 1.6;
+}
+</div>
+
+<p>
+Good typography = professional look.
+</p>
+</div>
+
+<div class="card">
+<h2>📏 Spacing (UNDERRATED SKILL)</h2>
+
+<div class="code">
+div {
+    margin: 20px;
+    padding: 20px;
+}
+</div>
+
+<p>
+Spacing is what separates beginner vs pro design.
+</p>
+</div>
+
+<div class="card exercise">
+<h2>🧪 Exercise (25 mins)</h2>
+
+<p>Take your previous HTML page and:</p>
+
+<ul>
+<li>Add background color</li>
+<li>Add spacing (margin/padding)</li>
+<li>Change text colors</li>
+</ul>
+
+<p>
+Make it clean, not random.
+</p>
+</div>
+
+<div class="card challenge">
+<h2>🔥 Challenge (40 mins)</h2>
+
+<p>Design a profile card:</p>
+
+<ul>
+<li>Image</li>
+<li>Name</li>
+<li>Short bio</li>
+</ul>
+
+<p>
+Focus on spacing + colors + layout.
+</p>
+</div>
+
+<div class="card">
+<h2>🧠 Key Takeaways</h2>
+
+<ul>
+<li>CSS = visual system, not decoration</li>
+<li>Box model is everything</li>
+<li>Spacing > fancy effects</li>
+</ul>
+</div>
+
+<div class="nav">
+<a class="btn" href="lesson4.html">Next Lesson →</a>
+</div>
+
+</div>
 
 </body>
 </html>
