@@ -1,35 +1,242 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 4</title>
+    <title>Lesson 4 - Layouts & Flexbox</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial;
-            background: #0f172a;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #60a5fa;
+        }
+
+        header p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #111827;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .code {
+            background: #020617;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        .demo-box {
+            background: #2563eb;
             color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
             text-align: center;
         }
-        button {
-            padding: 10px;
-            background: green;
-            color: white;
-            border: none;
+
+        .exercise {
+            border-left: 4px solid #22c55e;
         }
-        img { width: 250px; }
+
+        .challenge {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .nav {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            background: #2563eb;
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .flex-demo {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .flex-demo div {
+            background: #1e40af;
+            color: white;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+            border-radius: 6px;
+        }
+
     </style>
 </head>
+
 <body>
 
-<h1>Lesson 4: Mini Project</h1>
-<img src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+<header>
+    <h1>Layouts & Flexbox</h1>
+    <p>Build Modern Website Layouts</p>
+</header>
 
-<p>Click the button:</p>
+<div class="container">
 
-<button onclick="alert('You are coding!')">Click Me</button>
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
 
-<p>You just used JavaScript 🎉</p>
+<div class="card">
+<h2>🧠 Why Layouts Matter</h2>
+<p>
+Without proper layouts, websites look broken. Flexbox allows professional alignment without hacks.
+</p>
+<ul>
+<li>Proper spacing</li>
+<li>Centering elements</li>
+<li>Responsive design thinking</li>
+</ul>
+</div>
 
-<a href="index.html">Back to Home</a>
+<div class="card">
+<h2>📦 Flexbox Basics</h2>
+<p>Use <code>display: flex</code> to create flexible containers.</p>
+
+<div class="code">
+.container {
+    display: flex;
+}
+</div>
+
+<p>Children align automatically in a row by default.</p>
+
+<div class="flex-demo">
+<div>Box 1</div>
+<div>Box 2</div>
+<div>Box 3</div>
+</div>
+</div>
+
+<div class="card">
+<h2>⚙️ Flex Properties</h2>
+<ul>
+<li><code>justify-content</code> → horizontal alignment</li>
+<li><code>align-items</code> → vertical alignment</li>
+<li><code>flex-direction</code> → row / column</li>
+<li><code>gap</code> → spacing between elements</li>
+</ul>
+
+<div class="code">
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+</div>
+</div>
+
+<div class="card">
+<h2>💡 Real-World Example</h2>
+
+<p>Header with logo + menu:</p>
+
+<div class="code">
+<header class="flex-container">
+    &lt;div class="logo"&gt;Logo&lt;/div&gt;
+    &lt;nav&gt;Menu&lt;/nav&gt;
+</header>
+</div>
+
+<p>Flex aligns them perfectly without floats.</p>
+</div>
+
+<div class="card exercise">
+<h2>🧪 Exercise (25–30 mins)</h2>
+<p>Take a section of your page and:</p>
+<ul>
+<li>Make it a Flex container</li>
+<li>Align items horizontally</li>
+<li>Use gap to space elements</li>
+<li>Try vertical alignment with <code>align-items</code></li>
+</ul>
+</div>
+
+<div class="card challenge">
+<h2>🔥 Challenge (40 mins)</h2>
+<p>Build a small "feature section" with 3 boxes:</p>
+<ul>
+<li>Each box has title + description</li>
+<li>Use Flexbox to align them evenly</li>
+<li>Make it responsive: stack on small screens</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧠 Key Takeaways</h2>
+<ul>
+<li>Flexbox solves layout issues elegantly</li>
+<li>Align and space without hacks</li>
+<li>Foundation for responsive modern sites</li>
+</ul>
+</div>
+
+<div class="nav">
+<a class="btn" href="lesson5.html">Next Lesson →</a>
+</div>
+
+</div>
 
 </body>
 </html>
