@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5 - JavaScript Basics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #60a5fa;
+        }
+
+        header p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #111827;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .code {
+            background: #020617;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        .btn {
+            background: #2563eb;
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .exercise {
+            border-left: 4px solid #22c55e;
+        }
+
+        .challenge {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .demo-box {
+            background: #2563eb;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Basics</h1>
+    <p>Turn Your Website Into an Interactive Experience</p>
+</header>
+
+<div class="container">
+
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+
+<div class="card">
+<h2>🧠 What JS Does</h2>
+<p>
+JavaScript is the “brain” of your website. It responds to user actions and updates the page dynamically.
+</p>
+<ul>
+<li>Responds to clicks</li>
+<li>Validates forms</li>
+<li>Changes HTML/CSS dynamically</li>
+<li>Creates interactive UI elements</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>⚡ Basics: Variables</h2>
+
+<div class="code">
+// Store data
+let name = "Alice";
+const pi = 3.14;
+var age = 25;
+</div>
+
+<p>Use <code>let</code> or <code>const</code> most of the time.</p>
+</div>
+
+<div class="card">
+<h2>🔹 Functions</h2>
+
+<div class="code">
+function greet(user) {
+    alert("Hello " + user);
+}
+
+greet("Alice");
+</div>
+
+<p>Functions allow reusability and cleaner code.</p>
+</div>
+
+<div class="card">
+<h2>🔗 Events (Real Interaction)</h2>
+
+<p>JS reacts to actions like clicks:</p>
+
+<div class="code">
+<button id="clickBtn">Click Me</button>
+
+<script>
+document.getElementById("clickBtn").addEventListener("click", function() {
+    alert("You clicked the button!");
+});
+</script>
+</div>
+
+<p>
+User clicks → JS runs → DOM updates. That’s the power.
+</p>
+</div>
+
+<div class="card">
+<h2>📄 Manipulating HTML</h2>
+
+<div class="code">
+<p id="demo">Old Text</p>
+
+<script>
+document.getElementById("demo").innerText = "New Text";
+</script>
+</div>
+
+<p>
+JS can change text, colors, visibility, or add/remove elements.
+</p>
+</div>
+
+<div class="card exercise">
+<h2>🧪 Exercise (25–30 mins)</h2>
+<p>Add interactivity to your previous page:</p>
+<ul>
+<li>Click a button → change heading text</li>
+<li>Change background color dynamically</li>
+<li>Log messages in console</li>
+</ul>
+</div>
+
+<div class="card challenge">
+<h2>🔥 Challenge (40–50 mins)</h2>
+<p>Create a simple interactive profile card:</p>
+<ul>
+<li>Click “Show Bio” → reveals hidden paragraph</li>
+<li>Click “Change Color” → updates card background</li>
+<li>Use functions + event listeners</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧠 Key Takeaways</h2>
+<ul>
+<li>JS = interactivity + dynamic content</li>
+<li>Variables + functions = building blocks</li>
+<li>Events connect user → website</li>
+</ul>
+</div>
+
+<div class="nav">
+<a class="btn" href="lesson6.html">Next Lesson →</a>
+</div>
+
+</div>
+
+</body>
+</html>
