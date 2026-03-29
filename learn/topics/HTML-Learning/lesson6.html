@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 6 - DOM & Events</title>
+
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {font-family: 'Segoe UI', sans-serif; background: #0b0f19; color: #e5e7eb;}
+        header {text-align:center; padding:40px 20px;}
+        header h1 {font-size:42px; color:#60a5fa;}
+        header p {color:#9ca3af; margin-top:10px;}
+        .container {max-width:1100px; margin:auto; padding:20px;}
+        .hero-img {width:100%; border-radius:12px; margin:30px 0;}
+        .card {background:#111827; padding:25px; margin:25px 0; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.4);}
+        h2 {color:#38bdf8; margin-bottom:15px;}
+        p {line-height:1.7; color:#d1d5db;}
+        ul {margin-left:20px; margin-top:10px;}
+        li {margin:8px 0;}
+        .code {background:#020617; padding:15px; border-radius:8px; font-family:monospace; margin-top:15px; overflow-x:auto;}
+        .btn {background:#2563eb; padding:12px 25px; border-radius:8px; color:white; text-decoration:none; margin-top:10px; display:inline-block;}
+        .exercise {border-left:4px solid #22c55e;}
+        .challenge {border-left:4px solid #f59e0b;}
+        .demo-box {background:#2563eb; color:white; padding:20px; border-radius:8px; margin-top:15px; text-align:center;}
+        .list-demo li {margin:5px 0; padding:8px; background:#1e40af; border-radius:6px;}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>DOM & Events</h1>
+    <p>Make Your Website Truly Interactive</p>
+</header>
+
+<div class="container">
+
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+
+<div class="card">
+<h2>🧠 What is DOM?</h2>
+<p>
+The DOM (Document Object Model) is the bridge between your HTML and JavaScript.  
+It lets you access, change, and manipulate every element on your page.
+</p>
+</div>
+
+<div class="card">
+<h2>⚡ Selecting Elements</h2>
+
+<div class="code">
+// Single element
+const heading = document.getElementById("heading");
+
+// Multiple elements
+const items = document.querySelectorAll(".list-item");
+</div>
+
+<p>
+<code>getElementById</code> = one element<br>
+<code>querySelectorAll</code> = multiple elements
+</p>
+</div>
+
+<div class="card">
+<h2>🔗 Changing Content & Styles</h2>
+
+<div class="code">
+heading.innerText = "New Heading";
+heading.style.color = "yellow";
+</div>
+
+<p>
+You can change text, color, and almost everything dynamically.
+</p>
+</div>
+
+<div class="card">
+<h2>📋 Event Listeners</h2>
+
+<div class="code">
+const btn = document.getElementById("btn");
+btn.addEventListener("click", function() {
+    alert("Button clicked!");
+});
+</div>
+
+<p>Events connect user actions → JS → DOM updates.</p>
+</div>
+
+<div class="card">
+<h2>📂 Manipulating Lists (Real Example)</h2>
+
+<div class="code">
+<ul id="taskList" class="list-demo">
+    <li>Task 1</li>
+    <li>Task 2</li>
+</ul>
+
+<button id="addTask">Add Task</button>
+
+<script>
+document.getElementById("addTask").addEventListener("click", function(){
+    const ul = document.getElementById("taskList");
+    const li = document.createElement("li");
+    li.innerText = "New Task";
+    ul.appendChild(li);
+});
+</script>
+</div>
+
+<p>
+This is how dynamic content works — adding elements on the fly.
+</p>
+</div>
+
+<div class="card">
+<h2>⚙️ Form Handling</h2>
+
+<div class="code">
+<form id="contactForm">
+    <input type="text" id="name" placeholder="Name">
+    <button>Submit</button>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Hello " + document.getElementById("name").value);
+});
+</script>
+</div>
+
+<p>
+Prevent default → handle data yourself → dynamic behavior.
+</p>
+</div>
+
+<div class="card exercise">
+<h2>🧪 Exercise (25–30 mins)</h2>
+<p>Take your previous JS page and:</p>
+<ul>
+<li>Select multiple elements using querySelectorAll</li>
+<li>Change their text/color on button click</li>
+<li>Add a new list item dynamically</li>
+</ul>
+</div>
+
+<div class="card challenge">
+<h2>🔥 Challenge (40–50 mins)</h2>
+<p>Create a dynamic todo list:</p>
+<ul>
+<li>Input field + Add button</li>
+<li>Click Add → new list item appears</li>
+<li>Click list item → removes it</li>
+<li>Use event delegation + DOM manipulation</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧠 Key Takeaways</h2>
+<ul>
+<li>The DOM = interface between HTML + JS</li>
+<li>Event listeners = user interaction</li>
+<li>Create, update, remove elements dynamically</li>
+</ul>
+</div>
+
+<div class="nav">
+<a class="btn" href="lesson7.html">Next Lesson →</a>
+</div>
+
+</div>
+</body>
+</html>
