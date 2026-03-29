@@ -1,38 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <title>TechLearn | Learn more about tech</title>
+  <title>TechLearn | Learn More About Tech</title>
 </head>
-
 <body>
 
-  <h1 id="title"><strong>TechLearn</strong></h1>
+  <!-- Hero Section -->
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">TechLearn</div>
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#notice">Notice</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Learn Tech. Build the Future.</h1>
+      <p>Interactive tutorials, guides, and resources to master technology.</p>
+      <a href="#courses" class="btn-primary">Get Started</a>
+    </div>
+  </header>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="https://techlearnclub.github.io/">Home</a></li>
-      <li><a href="#notice">Notice</a></li>
-    </ul>
-  </nav>
+  <!-- Notice Section -->
+  <section id="notice">
+    <p>
+      IMPORTANT: This website is the successor of 
+      <a href="https://computersblog.github.io/?ref=succesor_website_techlearn">ComputersBlog</a>
+    </p>
+  </section>
 
-  <hr>
+  <!-- Main Content -->
+  <section class="main" id="courses">
+    <div class="card">
+      <h2>Web Development</h2>
+      <p>Learn HTML, CSS, JavaScript, and build modern websites.</p>
+    </div>
+    <div class="card">
+      <h2>Programming</h2>
+      <p>Master Python, C++, and other languages with interactive lessons.</p>
+    </div>
+    <div class="card">
+      <h2>AI & Data</h2>
+      <p>Explore AI, Machine Learning, and Data Science with practical projects.</p>
+    </div>
+  </section>
 
-  <p id="notice">
-    IMPORTANT: This website is meant to be the successor of 
-    <a href="https://computersblog.github.io/?ref=succesor_website_techlearn">ComputersBlog</a>
-  </p>
-
-  <div class="main"></div>
-
-  <footer>(C) WeProgram Technologies</footer>
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 WeProgram Technologies
+  </footer>
 
 </body>
 </html>
