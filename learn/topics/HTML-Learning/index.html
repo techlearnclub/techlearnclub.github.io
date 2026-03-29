@@ -1,40 +1,200 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Learn Coding</title>
+    <title>Learn Web Development</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        header {
             text-align: center;
-            background: #0f172a;
-            color: white;
+            padding: 60px 20px;
         }
-        img {
-            width: 300px;
-            margin-top: 20px;
+
+        header h1 {
+            font-size: 48px;
+            color: #60a5fa;
         }
-        a {
-            display: block;
-            margin: 15px;
-            padding: 10px;
+
+        header p {
+            color: #9ca3af;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #111827;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+
+        .lessons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .lesson {
+            background: #020617;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .lesson h3 {
+            color: #60a5fa;
+        }
+
+        .lesson p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
             background: #2563eb;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
         }
+
     </style>
 </head>
+
 <body>
 
-<h1>🚀 Learn Coding Course</h1>
-<img src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+<header>
+    <h1>Full Web Development Course</h1>
+    <p>From Beginner → Advanced Developer</p>
+</header>
 
-<p>Select a lesson:</p>
+<div class="container">
 
-<a href="lesson1.html">Lesson 1: What is HTML?</a>
-<a href="lesson2.html">Lesson 2: HTML Tags</a>
-<a href="lesson3.html">Lesson 3: CSS Basics</a>
-<a href="lesson4.html">Lesson 4: Mini Project</a>
+<img class="hero-img" src="https://techlearnclub.github.io/media/cdn/images/coding.jpg">
+
+<div class="card">
+<h2>📘 About This Course</h2>
+
+<p>
+This is not a basic tutorial.
+This course is designed to take you from knowing nothing → building real websites.
+</p>
+
+<p>
+You will not just copy code. You will understand:
+</p>
+
+<ul>
+<li>How websites actually work</li>
+<li>How to think like a developer</li>
+<li>How to structure and build real projects</li>
+<li>How to go from beginner → advanced</li>
+</ul>
+
+<p>
+Each lesson is designed to take <b>60–80 minutes</b> if done properly.
+</p>
+</div>
+
+<div class="card">
+<h2>🧠 What You’ll Learn</h2>
+
+<ul>
+<li>HTML (structure)</li>
+<li>CSS (design + layouts)</li>
+<li>JavaScript (logic + interactivity)</li>
+<li>Real-world project building</li>
+</ul>
+
+</div>
+
+<div class="card">
+<h2>📚 Course Lessons</h2>
+
+<div class="lessons">
+
+<div class="lesson">
+<h3>Lesson 1: HTML Foundations</h3>
+<p>Learn how websites are structured and how HTML really works.</p>
+<a class="btn" href="lesson1.html">Start Lesson</a>
+</div>
+
+<div class="lesson">
+<h3>Lesson 2: Advanced HTML</h3>
+<p>Semantic tags, forms, and real-world structure.</p>
+<a class="btn" href="lesson2.html">Start Lesson</a>
+</div>
+
+<div class="lesson">
+<h3>Lesson 3: CSS Fundamentals</h3>
+<p>Learn how to style and design websites properly.</p>
+<a class="btn" href="lesson3.html">Start Lesson</a>
+</div>
+
+<div class="lesson">
+<h3>Lesson 4: Layouts & Flexbox</h3>
+<p>Build real layouts like modern websites.</p>
+<a class="btn" href="lesson4.html">Start Lesson</a>
+</div>
+
+<div class="lesson">
+<h3>Lesson 5: JavaScript Basics</h3>
+<p>Add logic and interactivity to your site.</p>
+<a class="btn" href="lesson5.html">Start Lesson</a>
+</div>
+
+<div class="lesson">
+<h3>Lesson 6: DOM & Events</h3>
+<p>Make your website dynamic and interactive.</p>
+<a class="btn" href="lesson6.html">Start Lesson</a>
+</div>
+
+<div class="lesson">
+<h3>Lesson 7: Final Project</h3>
+<p>Build a real-world portfolio website.</p>
+<a class="btn" href="lesson7.html">Start Lesson</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
